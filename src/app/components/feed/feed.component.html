@@ -1,0 +1,21 @@
+<mat-card class="mat-elevation-z0" style="margin-bottom: 20px;">
+  <mat-card-content style="padding: 20px; font-size: 30px;">
+    {{ message }}
+  </mat-card-content>
+  <mat-card-actions style="flex-direction: row; display: flex; padding-bottom: 5px;">
+    <div style="padding: 10px 0px 0px 10px;">
+      #{{ author }}
+    </div>
+    <span style="flex: 1 1;"></span>
+    <div>
+      <button mat-button (click)="gotLiked()">
+        <mat-icon>thumb_up</mat-icon>
+        Like ({{ totalLikes }})
+      </button>
+      <button mat-button (click)="gotDisliked()">
+        <mat-icon>thumb_down</mat-icon>
+        Dislike ({{ totalDislikes }})
+      </button>
+    </div>
+  </mat-card-actions>
+</mat-card>

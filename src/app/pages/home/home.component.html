@@ -1,0 +1,20 @@
+<div class="body">
+  <mat-card style="margin-bottom: 20px;" class="mat-elevation-z0">
+    <mat-form-field style="display: block;" appearance="outline">
+      <mat-label>Who are you?</mat-label>
+      <input matInput [(ngModel)]="feed.author">
+    </mat-form-field>
+    <mat-form-field style="display: block;" appearance="outline">
+      <mat-label>What's bothering you?</mat-label>
+      <input matInput [(ngModel)]="feed.message">
+    </mat-form-field>
+    <div style="display: flex;">
+      <span style="flex: 1 1;"></span>
+      <button mat-flat-button color="accent" (click)="post()"
+        [disabled]="feed.message.trim().length === 0">Post</button>
+    </div>
+  </mat-card>
+  <app-feed *ngFor="let post of posts; let i = index" author="{{ post.author }}" message="{{ post.message }}"
+    [(totalLikes)]="post.liked" [(totalDislikes)]="post.disliked">
+  </app-feed>
+</div>
